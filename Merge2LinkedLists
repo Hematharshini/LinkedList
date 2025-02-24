@@ -1,0 +1,50 @@
+public class LinkedList {
+	Node head;
+	static class Node{
+		int data;
+		Node next;
+		Node(int data){
+			this.data = data;
+			next = null;
+		}
+	}
+	public static void  printList(LinkedList list) {
+		Node temp = list.head;
+		while(temp.next!=null) {
+			System.out.print(temp.data+" ");
+			temp = temp.next;
+		}
+		System.out.println();
+	}
+public static void merge(LinkedList list1, LinkedList list2) {
+		Node temp = list1.head;
+		while(temp.next!= null) {
+			temp = temp.next;
+		}
+		temp.next = list2.head;
+		printList(list1);
+		
+	}
+	public static void main(String[] args) {
+		LinkedList list1 = new LinkedList();
+		
+	    //insert elements in list
+	    insertAtEnd(list1,10);
+	    insertAtEnd(list1,20);
+	    insertAtEnd(list1,30);
+	    insertAtEnd(list1,40);
+	    insertAtEnd(list1,50);
+	    
+	    
+	    
+	    LinkedList list2 = new LinkedList();
+	    insertAtEnd(list2,60);
+	    insertAtEnd(list2,70);
+	    insertAtEnd(list2,80);
+	    insertAtEnd(list2,90);
+	    insertAtEnd(list2,100);
+	    
+	    merge(list1,list2);
+	}
+
+}
